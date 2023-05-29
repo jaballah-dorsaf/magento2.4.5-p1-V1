@@ -1,0 +1,119 @@
+/**
+ * WARNING: Please don't edit this file. This file was generated automatically, your any changes on this file will be overwritten and lost.
+ * Updated on 2023-02-15 15:01:12 */
+.nav-sections, .rootmenu {
+    background: #179BD7;
+}
+.rootmenu .rootmenu-list{
+    text-align: left;
+    display: table;
+    }
+.rootmenu-list > li {
+    border-color: #097FB4 !important;
+    float: left;
+    display: inline-block;
+    clear: none !important;
+    }
+.rootmenu-list > li > a{ 
+    color: #000000;
+    font-size: 16px;
+    text-transform: none;
+    padding: 15px 15px;}
+
+
+
+.rootmenu .title a,
+.rootmenu .title a{
+    color: #424242;
+    font-size: 11px;
+}
+
+
+
+.rootmenu > .rootmenu-list .halfmenu,
+.rootmenu > .rootmenu-list > li > .megamenu {
+    background: #FFFFFF;
+    text-transform: none;
+    border-top:  3px solid;
+    border-color: #097FB4}
+
+.rootmenu > .rootmenu-list .halfmenu ul > li > a,
+.rootmenu > .rootmenu-list .fullmenu ul > li > a {
+    color: #424242;
+}
+.rootmenu > .rootmenu-list .halfmenu ul > li > a:hover,
+.rootmenu > .rootmenu-list .fullmenu ul > li > a:hover {
+    color: #424242;
+}
+    .rootmenu > .rootmenu-list .level2-popup > li:hover .sub-cat-name,
+    .rootmenu > .rootmenu-list .level3-popup > li:hover a span,
+    .rootmenu > .rootmenu-list .level3-listing >li:hover > a .sub-cat-name,
+    .rootmenu > .rootmenu-list .level4-listing >li:hover > a .sub-cat-name,
+    .rootmenu > .rootmenu-list .tabbing_lev4 >li:hover > a .sub-cat-name,
+    .rootmenu > .rootmenu-list .ulliststy02 >li:hover > a .sub-cat-name{text-decoration:underline}
+
+.topmenu_main,
+.rootmenu .tabmenu .verticalopen,
+.rootmenu .rootmenu-list .tabmenu {
+    background: #FFFFFF !important;
+}
+
+.rootmenu .tabmenu .tabimgtext,
+.rootmenu .rootmenu-list .view_all{
+    color: #424242;
+    font-size: 11px;
+}
+.rootmenu .tabmenu .vertical-menu > li > a{
+    background: #E2E2E2;
+    border-bottom-color: #E2E2E2 !important;
+    color: #424242;
+    font-size: 11px;
+}
+.rootmenu > .rootmenu-list .tabmenu .vertical-menu .main_openactive01 > a {
+    background: #FFFFFF;
+    color: #424242;
+}
+.rootmenu .tabmenu .tabimgtext:hover{
+      color: #FFFFFF;
+}
+
+.rootmenu > .rootmenu-list .rootmenu-submenu {
+    border-top:  3px solid;
+    border-color: #097FB4}
+
+.rootmenu > .rootmenu-list .rootmenu-submenu li  a{
+    background: #FFFFFF;
+    border-bottom-color: #FFFFFF !important;
+    color: #000000;
+    font-size: 11px !important;
+}
+.rootmenu > .rootmenu-list .rootmenu-submenu li a:hover,
+.rootmenu > .rootmenu-list .rootmenu-submenu li:hover > a{
+    background: #E2E2E2 !important;
+    color: #000000 !important;
+}
+
+@media only screen and (min-width:768px) {
+        
+        
+                    .rw-social-links {float: right !important; border-right: none !important; border-left: 1px solid;}
+                        li.contactus_menu {float: right !important; border-right: none !important; border-left: 1px solid;}
+    
+    .rootmenu-list > li:hover > a,
+    .rootmenu-list > li > a:hover{
+    background: #097FB4;
+    color: #FFFFFF;
+    }
+    .rootmenu-list > li > a.active {
+        background: #097FB4;
+        color: #424242;
+    }
+    
+}
+
+@media only screen and (max-width:767px){
+    .rootmenu-list > li{
+        float: none !important;
+    }
+    }
+

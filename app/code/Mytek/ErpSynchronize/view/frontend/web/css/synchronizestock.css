@@ -1,0 +1,136 @@
+div#mymodule_block_home p {
+  font-size: 150%;
+  font-style:italic;
+}
+
+#shop_container {
+    padding: 0 0 5px 0;
+    
+}
+
+.enStock {
+    color: #29b001;
+    font-size: 1.16em;
+    font-weight: bold;
+}
+
+.horsStock {
+    color: #C70A0A;
+    font-size: 1.16em;
+    font-weight: bold;
+}
+
+
+.livraisonOK {
+    color: #29b001;
+    font-size: 1.60em;
+    font-weight: bold;
+}
+
+.livraisonNOK {
+    color: #C70A0A;
+    font-size: 1.60em;
+    font-weight: bold;
+}
+
+
+#shop_title {
+    color: #000;
+    background: #f0f0f0;
+    height: 30px;
+    font-size: 19px;
+    font-family: AkzidenzGrotesk_700,Arial,sans-serif;
+    text-align: center;
+    line-height: 31px;
+}
+
+#shop_container>table {
+    min-width: 198px;
+    margin: 5px auto 0 auto;
+}
+
+
+.tab_retrait_mag td {
+      background: #e3e0e3;
+      font-weight: 600;
+      padding: 5px 19px;
+      text-align: left;
+      color: #e70;
+      font-size: 10px;
+      font-family: sans-serif;
+      line-height: 11px;
+ }
+
+
+.livraison_express{
+    
+    background:url(../img/livraison_express.png) no-repeat; 
+    width:144px;
+    height:32px;
+    
+}
+
+.trait_separator{
+    
+    width: 100%;
+    height: 2px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    background-color: #fff;
+    border-top: 0px dashed #8c8b8b;
+    
+    
+}
+
+._payment_cheque{
+    border-collapse: separate;
+    border-spacing: 4px;
+    width: 100%;
+    margin: 0 0 3px;
+    background: white;
+}
+
+._payment_cheque th {
+   color: #c70a0a;
+}
+
+._payment_cheque tr td {
+    padding: 5px 10px;
+    font-size: 12px;
+    border-top: 1px solid #f0f0f0;
+    background: #f0f0f0;
+    text-align: center;
+}
+
+
+._call_delivery {
+    color: #b001a8;
+    font-size: 1.1em;
+    font-weight: bold;
+    
+}
+
+
+
+
+#synchronizestock_block_home {
+
+  display: inline-block;
+  width: 100%;
+
+}
+
+#synchronizestock_block_paiement {
+  display: inline-block;
+  width: 100%;
+
+}
+
+.alert-warning {
+    text-align: center;
+}
+
+#block_synchronizestok {
+    display: block;
+    padding-top: 0px;
+}

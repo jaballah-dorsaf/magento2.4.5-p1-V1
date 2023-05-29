@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Mytek_ErpSynchronize::erp_synchronize" title="ERP Synchronize" module="Mytek_ErpSynchronize" sortOrder="51" 
+            resource="Mytek_ErpSynchronize::erp_synchronize"/>
+
+        <add id="Mytek_ErpSynchronize::post" title="Manage Stock" module="Mytek_ErpSynchronize" sortOrder="10" 
+            parent="Mytek_ErpSynchronize::erp_synchronize"
+            resource="Mytek_ErpSynchronize::post" 
+            action="erp_synchronize/Index" />
+
+        <add id="Mytek_ErpSynchronize::integration" title="update product" module="Mytek_ErpSynchronize" sortOrder="11" 
+            parent="Mytek_ErpSynchronize::erp_synchronize"
+            resource="Mytek_ErpSynchronize::integration" 
+            action="erp_synchronize/Index/integration" />
+
+     
+    </menu>
+</config>

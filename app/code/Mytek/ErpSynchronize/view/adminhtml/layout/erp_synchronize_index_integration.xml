@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <referenceBlock name="page.title">
+        <action method="setPageTitle">
+            <argument name="title" xsi:type="string">ERP synchronize stock</argument>
+        </action>
+    </referenceBlock>
+    <body>
+        <referenceContainer name="content">
+            <!-- <block class="Mytek\ErpSynchronize\Block\Adminhtml\Index\Index" name="erp_synchronize_index_index" template="Mytek_ErpSynchronize::index.phtml"/> -->
+               <block class="Mytek\ErpSynchronize\Block\Adminhtml\Index\Integration" name="erp_synchronize_index_integration" template="Mytek_ErpSynchronize::integration.phtml"/>
+        </referenceContainer>
+    </body>
+</page>

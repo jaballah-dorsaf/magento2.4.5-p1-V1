@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+
+    <preference for="Mytek\ErpSynchronize\Api\StockRepositoryInterface"  type="Mytek\ErpSynchronize\Model\StockRepository" />
+    <preference for="Mytek\ErpSynchronize\Api\Data\StockInterface"   type="Mytek\ErpSynchronize\Model\Stock" />
+    <preference for="Mytek\ErpSynchronize\Api\Data\WarehouseInterface"   type="Mytek\ErpSynchronize\Model\Warehouse" />
+    <preference for="Mytek\ErpSynchronize\Api\Data\StockSearchResultsInterface"   type="Mytek\ErpSynchronize\Model\StockSearchResults" />
+    <preference for="Psr\Log\LoggerInterface" type="Magento\Framework\Logger\Monolog" />
+
+
+
+</config>

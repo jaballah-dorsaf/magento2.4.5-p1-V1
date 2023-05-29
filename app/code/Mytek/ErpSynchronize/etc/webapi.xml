@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
+
+    <route method="GET" url="/V1/stock_syncronize/:id">
+        <service class="Mytek\ErpSynchronize\Api\StockRepositoryInterface" method="getById"/>
+        <resources>
+            <resource ref="Mytek_ErpSynchronize::post" />
+        </resources>
+    </route>
+
+
+    <route method="GET" url="/V1/stock_syncronize">
+        <service class="Mytek\ErpSynchronize\Api\StockRepositoryInterface" method="getList"/>
+        <resources>
+            <resource ref="Mytek_ErpSynchronize::post" />
+        </resources>
+    </route>
+
+    <route method="POST" url="/V1/stock_syncronize">
+        <service class="Mytek\ErpSynchronize\Api\StockRepositoryInterface" method="save"/>
+        <resources>
+            <!-- <resource ref="anonymous"/> -->
+            <resource ref="Mytek_ErpSynchronize::post" />
+        </resources>
+    </route>
+
+
+
+      <route method="POST" url="/V1/stock_syncronize_multi">
+        <service class="Mytek\ErpSynchronize\Api\StockRepositoryInterface" method="save_multi"/>
+        <resources>
+            <resource ref="Mytek_ErpSynchronize::post" />
+        </resources>
+    </route>  
+
+</routes>

@@ -1,0 +1,16 @@
+{
+    "Stock": {
+      "CODE": "testproduct",
+      "DEPO": "M01",
+      "PRIX": "89.000",
+      "QTESTK": "4",
+      "MSG_ZERO_STK": "NONE",
+      "PRIX_SPECIFIQUE": "0",
+      "CODE_BARRES": "6925582124552",
+      "FAMILLE": "BRICOLAGE",
+      "DES": "INGCOPERCEUSEAPERCUSSION1",
+      "_6MOIS": "0.000",
+      "_9MOIS": "0.000",
+      "_12MOIS": "0.000"
+    }
+  }

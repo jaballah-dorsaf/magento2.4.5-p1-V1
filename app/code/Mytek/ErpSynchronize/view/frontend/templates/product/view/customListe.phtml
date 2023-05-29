@@ -1,0 +1,202 @@
+<?php
+
+
+
+$ws_names = [ 
+            "M01" => 'Megastore Charguia 1 Tunis',
+            "M05" => 'Megastore Akouda Sousse',
+            "M06" => 'Magasin Bizerte',
+            "M03" => 'Magasin av. liberté Tunis',
+            "M04" => 'Magasin av. A Belhouane Nabeul',
+            "M02" => 'Magasin Trocadero Sousse',
+            "M07" => 'Megastore Sfax'
+            ];
+
+
+            // exemple du contenu de ws_array ci-dessous
+            // +------------------+--------+-----------------+---------------+-----------------+---------------------------------+--------+--------+---------+---------------------+------+--------+--------------+------------------+
+            // | CODE             | PRIX   | PRIX_SPECIFIQUE | CODE_BARRES   | FAMILLE         | DES                             | _6MOIS | _9MOIS | _12MOIS | UPDATED_DATE        | DEPO | QTESTK | MSG_ZERO_STK | REF_ARTICLE      |
+            // +------------------+--------+-----------------+---------------+-----------------+---------------------------------+--------+--------+---------+---------------------+------+--------+--------------+------------------+
+            // | SMARTEC-S18-NOIR | 49.000 | 10.000          | 1212548770490 | TELEPHONE MOBIL | SMARTECTELEPHONEPORTABLES18NOIR | 0.000  | 0.000  | 0.000   | 2022-03-09 04:19:52 | M01  | 0      | EPUISE       | SMARTEC-S18-NOIR |
+            // | SMARTEC-S18-NOIR | 49.000 | 10.000          | 1212548770490 | TELEPHONE MOBIL | SMARTECTELEPHONEPORTABLES18NOIR | 0.000  | 0.000  | 0.000   | 2022-03-09 04:19:52 | M02  | 0      | EPUISE       | SMARTEC-S18-NOIR |
+            // | SMARTEC-S18-NOIR | 49.000 | 10.000          | 1212548770490 | TELEPHONE MOBIL | SMARTECTELEPHONEPORTABLES18NOIR | 0.000  | 0.000  | 0.000   | 2022-03-09 04:19:52 | M03  | 0      | EPUISE       | SMARTEC-S18-NOIR |
+            // | SMARTEC-S18-NOIR | 49.000 | 10.000          | 1212548770490 | TELEPHONE MOBIL | SMARTECTELEPHONEPORTABLES18NOIR | 0.000  | 0.000  | 0.000   | 2022-03-09 04:19:52 | M04  | 0      | EPUISE       | SMARTEC-S18-NOIR |
+            // | SMARTEC-S18-NOIR | 49.000 | 10.000          | 1212548770490 | TELEPHONE MOBIL | SMARTECTELEPHONEPORTABLES18NOIR | 0.000  | 0.000  | 0.000   | 2022-03-09 04:19:52 | M40  | 0      | EPUISE       | SMARTEC-S18-NOIR |
+            // | SMARTEC-S18-NOIR | 49.000 | 10.000          | 1212548770490 | TELEPHONE MOBIL | SMARTECTELEPHONEPORTABLES18NOIR | 0.000  | 0.000  | 0.000   | 2022-03-09 04:19:52 | M50  | 0      | EPUISE       | SMARTEC-S18-NOIR |
+            // +------------------+--------+-----------------+---------------+-----------------+---------------------------------+--------+--------+---------+---------------------+------+--------+--------------+------------------+
+                 
+            
+
+
+
+
+$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+$product = $objectManager->get('Magento\Framework\Registry')->registry('current_product'); //get current product
+//$_SKU = $product->getSku();
+
+
+
+$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+$current_category = $objectManager->get('Magento\Framework\Registry')->registry('current_category');
+$parentId = $current_category->getParentCategory()->getId();
+
+$cat_id = $current_category->getId();   
+$childCats = $current_category->getChildrenCategories();
+
+$categoryFactory = $objectManager->get('\Magento\Catalog\Model\CategoryFactory');
+$category = $categoryFactory->create()->load($parentId); 
+
+$page=($this->getRequest()->getParam('p'))? $this->getRequest()->getParam('p') : 1;
+   
+
+$categoryProducts = $category->getProductCollection()->setPageSize(13)->setCurPage($page)
+                             ->addAttributeToSelect('*');
+
+// echo $parentId;
+
+// echo 'count -- '.$category->getProductCount();
+foreach ($categoryProducts as $product) {
+
+
+
+
+$_SKU = $product->getSku();
+echo $_SKU;
+echo "<br>";
+
+$_all_html ="<div id=\"block_synchronizestok\">";
+$_html ="";
+$_result = $block->getStockBySKU($_SKU);
+$_total_stock=0;
+$_MSG_ZERO_STK="";
+$stores_sort= "";
+if(isset($_result)){
+    $ws_array = $_result->fetchAll();
+    if (!empty($ws_array)) {
+        $_html .=   "<div id=\"synchronizestock_block_home\">" .
+                    "<div id=\"shop_container\">" .
+                    "<div id=\"attrib_0\" style=\"display: block \">" .
+                    "<div id=\"shop_title\">STOCK EN MAGASIN</div>" .
+                    "<table class=\"tab_retrait_mag\">" .
+                    " <tbody>";
+
+
+        $_delivery_visible = false;
+        foreach ($ws_names as $key => $line) {
+            foreach ($ws_array as $row) {
+
+                $_total_stock += (int)$row['QTESTK'];
+                $_MSG_ZERO_STK = $row['MSG_ZERO_STK'];
+
+                $depo = $row['DEPO'];
+                if ($row['QTESTK'] > 0) {
+                    $availability = 'Disponible';
+                    $_class_css = 'enStock';
+                } else {
+                    $availability = 'Non disponible';
+                    $_class_css = 'horsStock';
+                }
+
+                if ($row['QTESTK'] > 0)
+                    $_delivery_visible = true;
+
+                if($depo == $key){
+                    $_html .= "<tr>" .
+                                "<td class='mag_name'>" .
+                                "<a href=\"https://www.mytek.tn/nos-magasin\" rel=\"nofollow\">$line: </a>" .
+                                "</td>" .
+                                "<td><span class=\"$_class_css\">$availability</span></td>" .
+                            "</tr>";
+                }
+
+
+
+            }
+        }
+
+
+                $_html .= "<tr>" .
+                            "<td colspan=\"2\">" .
+                            "<hr class=\"trait_separator\">" .
+                            "</td>" .
+                          "</tr>";
+
+
+        if ($_delivery_visible) {
+            $_html .=   "<tr>" .
+                            "<td><a href=\"https://www.mytek.tn/expedition-retours\">LIVRAISON EXPRESS: </a></td>" .
+                            "<td> <span class=\"livraisonOK\">Oui</span></td>" .
+                        "</tr>" .
+                        "<tr>" .
+                            "<td>COMMANDEZ EN LIGNE OU APPELLEZ LE </td>" .
+                            "<td> <a href=\"tel:36010010\"><span class=\"_call_delivery\"> 36 010 010</span></a></td>" .
+                      "</tr> ";
+            
+        }
+
+        $_html .=  "</tbody>" .
+                    "</table>" .
+                    "</div>" .
+                    "</div>" .
+                    "</div>";
+
+
+
+        if($row['PRIX'] >= 300){
+
+        $_html .= "<div id=\"synchronizestock_block_paiement\" style=\"display: block \">".
+                    " <table class=\"_payment_cheque\">".
+                        " <tbody>".
+                                "<tr>".
+                                    "<th colspan=\"3\">Facilité de paiement </th>".
+                            " </tr>".
+                                "<tr style=\" border-right: 1px solid #d6d4d4; width: 30%;font-weight: 700; color: #333333;\">".
+                                    "<td>3 mois</td>".
+                                    "<td>6 mois</td>".
+                                    "<td>9 mois</td>".
+                                    " <td>12 mois</td>";
+                                // cette colone doit afficher juste pour les produit avec un prix >=500dt 
+                            if ($row['PRIX']-$row['PRIX_SPECIFIQUE'] >= 500) {
+                                $_html .=" <td>jusqu'a 60 mois</td>";
+                            }
+                                
+                                //----------
+        $_html .=           " </tr>".
+                            " <tr style=\"border-right: 1px solid #d6d4d4;\">".
+                                    "<td>".$ws_array[0]['_3MOIS']."</td>".
+                                    "<td>".$ws_array[0]['_6MOIS']."</td>".
+                                    "<td>".$ws_array[0]['_9MOIS']."</td>".
+                                    "<td>".$ws_array[0]['_12MOIS']."</td>";
+                                    if ($row['PRIX']-$row['PRIX_SPECIFIQUE'] >= 500) {
+                                                                            // cette colone doit afficher juste pour les produit avec un prix >=500dt 
+                                        $_html .= "<td>".
+                                            "<picture>".
+                                                    "<source srcset=\"https://media.mytek.tn/media/wysiwyg/Facilité-attijeribank/tijari-bank.webp\" type=\"image/webp\">".
+                                                    "<source srcset=\"https://media.mytek.tn/media/wysiwyg/Facilité-attijeribank/tijari-bank.jpg\" type=\"image/jpg\">".
+                                                    "<img style=\"width: 70%;\" src=\"https://media.mytek.tn/media/wysiwyg/Facilité-attijeribank/tijari-bank.jpg\" alt=\"alttijari\" width=\"145\" height=\"30\">".
+                                                "</picture>".
+                                            "<br> <a style=\"margin:5px\" class=\"condition\" href=\"https://mytek.tn/attijeri-conditions\" > Voir Conditions </a> ".
+                                            "</td>";
+                                        //------------------------------
+                                    }
+        $_html .=           " </tr>".
+                        " </tbody>".
+                        "</table>".
+                 "</div>";
+        }
+
+    }
+
+
+    if($_total_stock == 0 && $_MSG_ZERO_STK != 'EPUISE'){
+        $_all_html .= "<div class=\"alert alert-warning\"><strong>".$_MSG_ZERO_STK."</strong> </div>";
+    }
+    
+    $_all_html .= $_html;
+    $_all_html .= "</div>";
+    
+    echo $_all_html;
+
+}
+}
+

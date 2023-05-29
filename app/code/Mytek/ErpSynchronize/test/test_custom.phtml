@@ -1,0 +1,159 @@
+<?php
+
+$line1= array(
+    "CODE" => "TAB-74-NOIR",
+    "PRIX" => "139.000",
+    "PRIX_SPECIFIQUE"=>"0.000",
+    "CODE_BARRES" => "3483077926522",
+    "FAMILLE" => "TABLETTE",
+    "DES" => "LOGICOMTABLETTE71024x600WIFIRAM1GMEMOIRE16G2MP03MPAND81GAR1AN",
+    "_6MOIS"=> "0.000",
+    "_9MOIS"=> "0.000",
+    "_12MOIS"=> "0.000",
+    "DEPO"=> "M01",
+    "QTESTK"=> "31",
+    "MSG_ZERO_STK"=>  "DISPONIBLE",
+    "REF_ARTICLE"=>  "TAB-74-NOIR"
+);
+
+$line2= array(
+    "CODE" => "TAB-74-NOIR",
+    "PRIX" => "139.000",
+    "PRIX_SPECIFIQUE"=>"0.000",
+    "CODE_BARRES" => "3483077926522",
+    "FAMILLE" => "TABLETTE",
+    "DES" => "LOGICOMTABLETTE71024x600WIFIRAM1GMEMOIRE16G2MP03MPAND81GAR1AN",
+    "_6MOIS"=> "0.000",
+    "_9MOIS"=> "0.000",
+    "_12MOIS"=> "0.000",
+    "DEPO"=> "M02",
+    "QTESTK"=> "31",
+    "MSG_ZERO_STK"=>  "DISPONIBLE",
+    "REF_ARTICLE"=>  "TAB-74-NOIR"
+);
+
+$line3= array(
+    "CODE" => "TAB-74-NOIR",
+    "PRIX" => "139.000",
+    "PRIX_SPECIFIQUE"=>"0.000",
+    "CODE_BARRES" => "3483077926522",
+    "FAMILLE" => "TABLETTE",
+    "DES" => "LOGICOMTABLETTE71024x600WIFIRAM1GMEMOIRE16G2MP03MPAND81GAR1AN",
+    "_6MOIS"=> "0.000",
+    "_9MOIS"=> "0.000",
+    "_12MOIS"=> "0.000",
+    "DEPO"=> "M03",
+    "QTESTK"=> "31",
+    "MSG_ZERO_STK"=>  "DISPONIBLE",
+    "REF_ARTICLE"=>  "TAB-74-NOIR"
+);
+
+$line4= array(
+    "CODE" => "TAB-74-NOIR",
+    "PRIX" => "139.000",
+    "PRIX_SPECIFIQUE"=>"0.000",
+    "CODE_BARRES" => "3483077926522",
+    "FAMILLE" => "TABLETTE",
+    "DES" => "LOGICOMTABLETTE71024x600WIFIRAM1GMEMOIRE16G2MP03MPAND81GAR1AN",
+    "_6MOIS"=> "0.000",
+    "_9MOIS"=> "0.000",
+    "_12MOIS"=> "0.000",
+    "DEPO"=> "M04",
+    "QTESTK"=> "31",
+    "MSG_ZERO_STK"=>  "DISPONIBLE",
+    "REF_ARTICLE"=>  "TAB-74-NOIR"
+);
+
+$line5= array(
+    "CODE" => "TAB-74-NOIR",
+    "PRIX" => "139.000",
+    "PRIX_SPECIFIQUE"=>"0.000",
+    "CODE_BARRES" => "3483077926522",
+    "FAMILLE" => "TABLETTE",
+    "DES" => "LOGICOMTABLETTE71024x600WIFIRAM1GMEMOIRE16G2MP03MPAND81GAR1AN",
+    "_6MOIS"=> "0.000",
+    "_9MOIS"=> "0.000",
+    "_12MOIS"=> "0.000",
+    "DEPO"=> "M40",
+    "QTESTK"=> "31",
+    "MSG_ZERO_STK"=>  "DISPONIBLE",
+    "REF_ARTICLE"=>  "TAB-74-NOIR"
+);
+
+$line6= array(
+    "CODE" => "TAB-74-NOIR",
+    "PRIX" => "139.000",
+    "PRIX_SPECIFIQUE"=>"0.000",
+    "CODE_BARRES" => "3483077926522",
+    "FAMILLE" => "TABLETTE",
+    "DES" => "LOGICOMTABLETTE71024x600WIFIRAM1GMEMOIRE16G2MP03MPAND81GAR1AN",
+    "_6MOIS"=> "0.000",
+    "_9MOIS"=> "0.000",
+    "_12MOIS"=> "0.000",
+    "DEPO"=> "M50",
+    "QTESTK"=> "31",
+    "MSG_ZERO_STK"=>  "DISPONIBLE",
+    "REF_ARTICLE"=>  "TAB-74-NOIR"
+);
+
+$stores[]=$line1;
+$stores[]=$line2;
+$stores[]=$line3;
+$stores[]=$line4;
+$stores[]=$line5;
+$stores[]=$line6;
+
+
+//  $magasins=  [  
+//                 [ "M01" => 'MAGASIN PRINCIPAL CHARGUIA I', 'order' => 1],
+//                 [ "M50" => 'MEUBLE ET DECO CHARGUIA I', 'order' => 2],
+//                 [ "M03" => 'MAGASIN AV. LIBERTÉ', 'order' => 3],
+//                 [ "M04" => 'MAGASIN NABEUL', 'order' => 4],
+//                 [ "M40" => 'MEGA STORE SOUSSE', 'order' => 5],
+//                 [ "M05" => 'MAGASIN SOUSSE CENTRE', 'order' => 6]
+//  ];
+
+$magasins=  [ 
+                "M01" => 'Mytek Charguia 1 Tunis',
+                "M50" => 'Mytek meuble & déco Charguia 1',
+                "M03" => 'Mytek Av. Liberté Tunis',
+                "M04" => 'Mytek Nabeul',
+                "M40" => 'Mytek Megastore Sousse',
+                "M02" => 'Mytek Sousse centre'
+            ];
+
+ $_html =""; 
+ foreach ($magasins as $key => $line) {
+
+    foreach ($stores as $row) {
+        $depo = $row['DEPO'];
+        // echo $key; 
+        if($depo == $key){
+            $_html .=   "<a href=\"https://www.mytek.tn/nos-magasin\" rel=\"nofollow\">$line: </a> \n"  ;
+        }
+    }
+
+
+ }
+
+
+
+// // print_r($stores);
+// print_r($magasins);
+// $_html = "-------";
+// foreach ($stores as $row) {
+//     $depo = $row['DEPO'];
+//     foreach ($magasins as $key => $value) {
+//         if(isset($line[$depo])){
+//             $_html .=   "<a href=\"https://www.mytek.tn/nos-magasin\" rel=\"nofollow\">$line[$depo]: </a>"  ;
+//         }
+//     }
+
+// }
+
+echo $_html;
+
+
+
+
+?>

@@ -1,0 +1,62 @@
+<?php
+
+// echo "test";
+
+$_URL= getenv('BASE_URL_SECURE').getenv('MK_BACKEND_ADMIN')."/erp_synchronize/Index/integration";
+$_FORM_KEY= $block->getFormKey();
+
+
+$_form= 
+        "<form action='".$_URL."' method=\"get\">".
+            "<p>Réference produit : <input type=\"text\" name=\"ref_article\" /></p>".
+            "<p>
+            <label for=\"short_description\">short description : </label>".
+            "<textarea  id=\"short_description\" name=\"short_description\" rows=\"4\" cols=\"50\" ></textarea>
+            </p>".
+   
+            "<p><input  name=\"UPDATE\" type=\"submit\" value=\"UPDATE\"  ></p>".
+            "<input name=\"form_key\" type=\"hidden\" value=".$_FORM_KEY." />".        
+        "</form>";
+
+echo $_form;
+
+
+
+
+// $ws_array = $block->getDataWs();
+
+
+// if ( isset($ws_array) &&  !empty($ws_array)) {
+//     echo
+//         "<table class=\"table table-bordered\" border='1' width='100%' style='text-align: center;' >" .
+//         " <tbody  >" ;
+        
+
+//     // display title array
+//     echo "<tr>";
+//     foreach ($ws_array[0] as $k => $v) {
+//         // echo "\$a[$k] => $v.\n";
+
+//         echo "<th scope=\"col\">$k</th>";
+    
+//     }  
+//     echo "</tr>";    
+
+//     $_delivery_visible = false;
+//     foreach ($ws_array as $row) {
+//         echo  "<tr>" ;
+//             foreach ($row as $k => $v) {
+//                 echo "<td><span>".$row[$k]."</span></td></td>" ;
+                
+//             }
+//         echo "</tr>";
+//     }
+
+//     echo "</tbody></table>" ;
+
+// }else{
+//     echo "not found ";
+// }
+
+
+?>

@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+    	 <referenceContainer name="footer-container" remove="false"/>
+        <referenceBlock name="checkout.root">
+            <arguments>
+                <argument name="jsLayout" xsi:type="array">
+                    <item name="components" xsi:type="array">
+                        <item name="checkout" xsi:type="array">
+                            <item name="children" xsi:type="array">
+                                <item name="steps" xsi:type="array">
+                                    <item name="children" xsi:type="array">
+                                        <item name="shipping-step" xsi:type="array">
+                                            <item name="children" xsi:type="array">
+                                                <item name="shippingAddress" xsi:type="array">
+                                                    <item name="children" xsi:type="array">
+                                                        <!-- The name of the form the field belongs to -->
+                                                        <item name="shipping-address-fieldset" xsi:type="array">
+                                                            <item name="children" xsi:type="array">
+                                                                <!-- the field you are customizing -->
+                                                                <item name="telephone" xsi:type="array">
+                                                                   <item name="component" xsi:type="string">Magento_Ui/js/form/element/telephone</item>
+                                                                    <item name="config" xsi:type="array">
+                                                                        <!-- Assigning a new template -->
+                                                                        <item name="elementTmpl" xsi:type="string">Magento_Ui/form/element/number</item>
+                                                                        <item name="placeholder" xsi:type="string">xxxxxxxx</item>
+                                                                        <item name="tooltip" xsi:type="array">
+                                                                            <item name="description" xsi:type="string" translate="true">For delivery questions.</item>
+                                                                        </item>
+                                                                    </item>
+                                                                    <item name="validation" xsi:type="array">
+                                                                            <item name="min_text_length" xsi:type="number">8</item>
+                                                                            <item name="max_text_length" xsi:type="number">8</item>
+                                                                            <item name="validate-number" xsi:type="number">0</item>
+                                                                    </item>
+                                                                </item>
+                                                            </item>
+                                                        </item>
+                                                    </item>
+                                                </item>
+                                            </item>
+                                        </item>
+                                    </item>
+                                </item>
+                            </item>
+                        </item>
+                    </item>
+                </argument>
+            </arguments>
+        </referenceBlock>
+    </body>
+</page>

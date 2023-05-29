@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page layout="1column" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <!-- <move element="product.info.media" destination="product.info.main" after="page.main.title"/>  -->
+        <move element="product.info.stock.sku" destination="product.info.price" before="product.price.final"/>
+        <move element="product.info.review" destination="product.info.main" after="page.main.title" />
+        <!-- <move element="page.main.title" destination="product.info.main" before="-"/> -->
+        <move element="product.info.overview" destination="product.info.main" after="product.info.price"/>
+        <referenceBlock name="breadcrumbs" template="Magento_Theme::html/breadcrumbs.phtml"/>
+       
+        <referenceContainer name="page.top">
+            <block class="Magento\Catalog\Block\Product\View" name="catalog.product.view.custom" template="Magento_Catalog::product/view/customBreadCrumb.phtml" before="product.info.main" />
+        </referenceContainer>
+       
+        
+    </body>
+</page>

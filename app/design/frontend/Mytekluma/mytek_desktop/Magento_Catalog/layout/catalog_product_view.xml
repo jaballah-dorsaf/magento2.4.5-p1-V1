@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page layout="2columns-right" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+      
+        <move element="product.info.stock.sku" destination="product.info.main" after="page.main.title" />
+        <move element="product.info.review" destination="product.info.main" before="product.info.stock.sku" />
+        <move element="product.info.price" destination="sidebar.additional" before="-"/>
+        <move element="product.info" destination="sidebar.additional" after="product.info.price"/>      
+        <move element="product.info.overview" destination="product.info.main" after="product.info.price"/>
+        <move element="product.info.social" destination="product.info.addtocart" />
+        <move element="product.info.extrahint" destination="page.main.title" />
+        <move element="catalog.compare.sidebar" destination="product.info.social" />
+        <move element="wishlist_sidebar" destination="product.info.social" />
+ 
+     
+
+        <referenceBlock name="breadcrumbs" template="Magento_Theme::html/breadcrumbs.phtml"/>
+        <block class="Magento\Catalog\Block\Breadcrumbs"/>
+        <referenceContainer name="page.top">
+            <block class="Magento\Catalog\Block\Product\View" name="catalog.product.view.custom" template="Magento_Catalog::product/view/customBreadCrumb.phtml" before="product.info.main" />
+        </referenceContainer>
+       
+    </body>
+</page>

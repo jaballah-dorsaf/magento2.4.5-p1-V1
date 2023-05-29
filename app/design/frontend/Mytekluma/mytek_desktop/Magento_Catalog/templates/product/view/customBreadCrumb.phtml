@@ -1,0 +1,44 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+/** @var $block \Magento\Catalog\Block\Product\View */
+?>
+<?php $_product = $block->getProduct(); ?>
+    <div class="breadcrumbs" style="float: left;">
+        <ul class="items" itemscope itemtype="https://schema.org/BreadcrumbList">
+        <?php
+        $position = 2;
+        $categBread=$_product->getCategoryIds();
+        $categBreadurls=$_product->getCategoryUrl();
+        echo "<li class='item home' itemprop='itemListElement' itemscope itemtype='http://schema.org/ListItem'>";
+        echo '<a itemprop="item" class="customBreadCrumbItem" title="Aller à la page d\'accueil" href="'.$block->getBaseUrl().'">';
+        echo "<span itemprop='name'> Accueil </span>";
+        echo"</a> ";
+        echo "<meta itemprop='position' content='1'  />";
+        echo"</li> ";
+            foreach (array_reverse($categBread) as $key => $value) {
+                $categoryId = $value;
+                $_objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+                $category = $_objectManager->create('Magento\Catalog\Model\Category')
+                ->load($categoryId);
+                if( $category->getName()=="Default Category" ){
+                    //do nothing
+                }else{
+                    echo "<li class='item category".$categoryId."' itemprop='itemListElement' itemscope itemtype='http://schema.org/ListItem'>";
+                    echo "<a itemprop='item' class='customBreadCrumbItem' href='".$category->getUrl()."'>";
+                    echo "<span itemprop='name'> ".$category->getName()." </span>";
+                    echo"</a>  ";
+                    echo "<meta itemprop='position' content='".$position++ ."'  />";
+                    echo"</li> ";
+                }
+            }
+            echo "<li class='item product' itemprop='itemListElement' itemscope itemtype='http://schema.org/ListItem'>";
+            echo "<span class='customBreadCrumbItem' itemprop='name'> ". $block->getProduct()->getName() ." </span>";
+            echo "<meta itemprop='position' content='".$position ."'  />";
+            echo"</li> ";
+
+        ?>
+        </ul>
+    </div>

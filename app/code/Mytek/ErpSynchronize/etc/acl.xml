@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+    <acl>
+        <resources>
+            <resource id="Magento_Backend::admin">
+                <resource id="Mytek_ErpSynchronize::erp_synchronize" title="ERP Synchronize" sortOrder="51"  >
+                    <resource id="Mytek_ErpSynchronize::post" title="Manage Stock" sortOrder="100" />
+                    <resource id="Mytek_ErpSynchronize::integration" title="Update product" sortOrder="101" />
+                </resource>
+            </resource>
+        </resources>
+    </acl>
+</config>

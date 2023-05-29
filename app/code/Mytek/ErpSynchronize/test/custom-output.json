@@ -1,0 +1,113 @@
+array(13) {
+    ["CODE"]=>
+    string(11) "TAB-74-NOIR"
+    ["PRIX"]=>
+    string(7) "139.000"
+    ["PRIX_SPECIFIQUE"]=>
+    string(5) "0.000"
+    ["CODE_BARRES"]=>
+    string(13) "3483077926522"
+    ["FAMILLE"]=>
+    string(8) "TABLETTE"
+    ["DES"]=>
+    string(61) "LOGICOMTABLETTE71024x600WIFIRAM1GMEMOIRE16G2MP03MPAND81GAR1AN"
+    ["_6MOIS"]=>
+    string(5) "0.000"
+    ["_9MOIS"]=>
+    string(5) "0.000"
+    ["_12MOIS"]=>
+    string(5) "0.000"
+    ["DEPO"]=>
+    string(3) "M01"
+    ["QTESTK"]=>
+    string(2) "31"
+    ["MSG_ZERO_STK"]=>
+    string(10) "DISPONIBLE"
+    ["REF_ARTICLE"]=>
+    string(11) "TAB-74-NOIR"
+  }
+  array(13) {
+    ["CODE"]=>
+    string(11) "TAB-74-NOIR"
+    ["PRIX"]=>
+    string(7) "139.000"
+    ["PRIX_SPECIFIQUE"]=>
+    string(5) "0.000"
+    ["CODE_BARRES"]=>
+    string(13) "3483077926522"
+    ["FAMILLE"]=>
+    string(8) "TABLETTE"
+    ["DES"]=>
+    string(61) "LOGICOMTABLETTE71024x600WIFIRAM1GMEMOIRE16G2MP03MPAND81GAR1AN"
+    ["_6MOIS"]=>
+    string(5) "0.000"
+    ["_9MOIS"]=>
+    string(5) "0.000"
+    ["_12MOIS"]=>
+    string(5) "0.000"
+    ["DEPO"]=>
+    string(3) "M02"
+    ["QTESTK"]=>
+    string(1) "5"
+    ["MSG_ZERO_STK"]=>
+    string(10) "DISPONIBLE"
+    ["REF_ARTICLE"]=>
+    string(11) "TAB-74-NOIR"
+  }
+  array(13) {
+    ["CODE"]=>
+    string(11) "TAB-74-NOIR"
+    ["PRIX"]=>
+    string(7) "139.000"
+    ["PRIX_SPECIFIQUE"]=>
+    string(5) "0.000"
+    ["CODE_BARRES"]=>
+    string(13) "3483077926522"
+    ["FAMILLE"]=>
+    string(8) "TABLETTE"
+    ["DES"]=>
+    string(61) "LOGICOMTABLETTE71024x600WIFIRAM1GMEMOIRE16G2MP03MPAND81GAR1AN"
+    ["_6MOIS"]=>
+    string(5) "0.000"
+    ["_9MOIS"]=>
+    string(5) "0.000"
+    ["_12MOIS"]=>
+    string(5) "0.000"
+    ["DEPO"]=>
+    string(3) "M03"
+    ["QTESTK"]=>
+    string(1) "1"
+    ["MSG_ZERO_STK"]=>
+    string(10) "DISPONIBLE"
+    ["REF_ARTICLE"]=>
+    string(11) "TAB-74-NOIR"
+  }
+  array(13) {
+    ["CODE"]=>
+    string(11) "TAB-74-NOIR"
+    ["PRIX"]=>
+    string(7) "139.000"
+    ["PRIX_SPECIFIQUE"]=>
+    string(5) "0.000"
+    ["CODE_BARRES"]=>
+    string(13) "3483077926522"
+    ["FAMILLE"]=>
+    string(8) "TABLETTE"
+    ["DES"]=>
+    string(61) "LOGICOMTABLETTE71024x600WIFIRAM1GMEMOIRE16G2MP03MPAND81GAR1AN"
+    ["_6MOIS"]=>
+    string(5) "0.000"
+    ["_9MOIS"]=>
+    string(5) "0.000"
+    ["_12MOIS"]=>
+    string(5) "0.000"
+    ["DEPO"]=>
+    string(3) "M04"
+    ["QTESTK"]=>
+    string(1) "2"
+    ["MSG_ZERO_STK"]=>
+    string(10) "DISPONIBLE"
+    ["REF_ARTICLE"]=>
+    string(11) "TAB-74-NOIR"
+  }
+  string(0) ""

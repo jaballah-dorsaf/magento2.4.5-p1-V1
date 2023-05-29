@@ -1,0 +1,74 @@
+<?php
+
+// echo "test";
+
+$_URL= getenv('BASE_URL_SECURE').getenv('MK_BACKEND_ADMIN')."/erp_synchronize/Index/index";
+$_FORM_KEY= $block->getFormKey();
+
+
+$_form= "<form action='".$_URL."' method=\"get\">".
+            "<p>Réference produit : <input type=\"text\" name=\"ref_article\" /></p>".
+            "<p>".
+            "<input type=\"radio\" id=\"filter\" name=\"ws_action\" value=\"filter\"   checked> <label for=\"filter\">Filter</label>".
+            "</p>".
+            "<p>".
+            "<input type=\"radio\" id=\"delete\" name=\"ws_action\" value=\"delete\"   > <label for=\"delete\">Delete</label>".
+            "</p>".
+            "<p><input  name=\"SUBMIT\" type=\"submit\" value=\"SUBMIT\"  ></p>".
+            "<input name=\"form_key\" type=\"hidden\" value=".$_FORM_KEY." />".        
+        "</form>";
+
+echo $_form;
+
+
+
+
+$ws_array = $block->getDataWs();
+
+
+    // print_r($ws_array);
+    // echo "</pre>";
+    // exit;
+
+
+// if ( isset($ws_array) &&  !empty($ws_array)) {
+//     echo "true";
+// }else{
+//     echo "false";
+// }
+
+
+if ( isset($ws_array) &&  !empty($ws_array)) {
+    echo
+        "<table class=\"table table-bordered\" border='1' width='100%' style='text-align: center;' >" .
+        " <tbody  >" ;
+        
+
+    // display title array
+    echo "<tr>";
+    foreach ($ws_array[0] as $k => $v) {
+        // echo "\$a[$k] => $v.\n";
+
+        echo "<th scope=\"col\">$k</th>";
+    
+    }  
+    echo "</tr>";    
+
+    $_delivery_visible = false;
+    foreach ($ws_array as $row) {
+        echo  "<tr>" ;
+            foreach ($row as $k => $v) {
+                echo "<td><span>".$row[$k]."</span></td></td>" ;
+                
+            }
+        echo "</tr>";
+    }
+
+    echo "</tbody></table>" ;
+
+}else{
+    echo "not found ";
+}
+
+
+?>

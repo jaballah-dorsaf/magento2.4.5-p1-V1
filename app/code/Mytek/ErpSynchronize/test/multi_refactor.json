@@ -1,0 +1,55 @@
+{
+    "stock": 
+    {      
+      "CODE": "MGND3FN-A",
+      "PRIX": "3795.000",
+      "PRIX_SPECIFIQUE": "0",
+      "FAMILLE": "PRODUITS BEBES",
+      "CODE_BARRES": "8695199222832",
+      "DES": "SWEETBABYBATONNETSPOURBEBE60PIECES",
+      "_3MOIS": "900",
+      "_6MOIS": "600",
+      "_9MOIS": "200",
+      "_12MOIS": "100",
+      "warehouses":[
+        {
+          "DEPO": "M01",
+          "QTESTK": "0",
+          "MSG_ZERO_STK": "EN ARRIVAGE"
+        },
+        {
+          "DEPO": "M02",
+          "QTESTK": "0",
+          "MSG_ZERO_STK": "EN ARRIVAGE"
+        },
+        {
+          "DEPO": "M03",
+          "QTESTK": "0",
+          "MSG_ZERO_STK": "EN ARRIVAGE"
+        },
+        {
+          "DEPO": "M04",
+          "QTESTK": "0",
+          "MSG_ZERO_STK": "EN ARRIVAGE"
+        },
+        {
+          "DEPO": "M05",
+          "QTESTK": "0",
+          "MSG_ZERO_STK": "EN ARRIVAGE"
+        },
+        {
+          "DEPO": "M06",
+          "QTESTK": "0",
+          "MSG_ZERO_STK": "EN ARRIVAGE"
+        },
+        {
+          "DEPO": "M07",
+          "QTESTK": "0",
+          "MSG_ZERO_STK": "EN ARRIVAGE"
+        }
+    
+      ]
+  
+    }
+
+}

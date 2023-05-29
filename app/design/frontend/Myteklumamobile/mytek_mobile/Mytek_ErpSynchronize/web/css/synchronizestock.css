@@ -1,0 +1,219 @@
+div#mymodule_block_home p {
+  font-size: 150%;
+  font-style:italic;
+}
+
+#shop_container {
+    padding: 0 0 5px 0;
+    background: white;
+    box-shadow: 0px 2px 6px 3px #e7e7e7;  
+}
+
+.enStock {
+    color: #00d660;
+    font-size: 1.16em;
+}
+
+.horsStock {
+    color: #C70A0A;
+    font-size: 1.16em;
+}
+.erpCommande{
+    color: #ff9a07;
+    font-size: 1.16em;
+}
+.erpArivage{
+    color: #007bff;
+    font-size: 1.16em;
+}
+
+
+.livraisonOK {
+    color: #29b001;
+    font-size: 1.60em;
+    font-weight: bold;
+}
+
+.livraisonNOK {
+    color: #C70A0A;
+    font-size: 1.60em;
+    font-weight: bold;
+}
+
+
+#shop_title {
+    color: #000;
+    background: #e3e0e3;
+    height: 34px;
+    font-size: 18px;
+    font-family: 'Open Sans', sans-serif;
+    text-align: center;
+    line-height: 37px;
+    font-weight: 600;
+    
+}
+
+#shop_container>table {
+    min-width: 198px;
+    margin: 5px auto 0 auto;
+}
+
+
+.tab_retrait_mag td {
+    background: #ffffff;
+    font-weight: 600;
+    padding: 5px 19px;
+    text-align: left;
+    color: #e70;
+    font-size: 13px;
+    font-family: 'Open Sans', sans-serif;
+    line-height: 14px;
+    width: 60%;
+ }
+
+ .tab_retrait_mag td a{
+
+    color:#000;
+ }
+
+.livraison_express{
+    
+    background:url(../img/livraison_express.png) no-repeat; 
+    width:144px;
+    height:32px;
+    
+}
+
+.trait_separator{
+    
+    width: 100%;
+    height: 2px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    background-color: #fff;
+    border-top: 0px dashed #8c8b8b;
+    
+    
+}
+
+._payment_cheque{
+    border-collapse: separate;
+    border-spacing: 4px;
+    width: 100%;
+    margin: 0 0 3px;
+    background: white;
+}
+
+._payment_cheque th {
+   
+    color: #000;
+    background: #e3e0e3;
+    font-weight: 600;
+    font-size: 17px;
+    height: 34px;
+
+}
+
+._payment_cheque tr td {
+    padding: 3px 8px;
+    font-size: 13px;
+    border-top: 1px solid #f0f0f0;
+    background: #f0f0f0;
+    text-align: center;
+}
+
+
+._call_delivery {
+    color: #b001a8;
+    font-size: 1.1em;
+    font-weight: bold;
+    
+}
+
+
+
+
+#synchronizestock_block_home {
+
+  display: inline-block;
+  width: 100%;
+
+}
+
+#synchronizestock_block_paiement {
+  display: inline-block;
+  width: 100%;
+
+}
+
+.alert-warning {
+    text-align: center;
+}
+
+#block_synchronizestok {
+    display: block;
+    padding-top: 0px;
+    width: 92%;
+}
+
+.availability .enStock {
+    background: #29b001;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: block !important;
+}
+
+.availability .horsStock {
+    background: #C70A0A;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: block !important;
+}
+
+
+.additional-attributes>tbody>tr>th {
+    width: auto;
+    white-space: nowrap;
+    color: #000;
+    background: #f0f0f0;
+    border: 2px solid #fff !important;
+    padding-left: 10px;
+}
+.product.info.detailed .additional-attributes>thead>tr>td, .product.info.detailed .additional-attributes>tbody>tr>td, .product.info.detailed .additional-attributes>tfoot>tr>td {
+    background: #f0f0f0;
+    border: 2px solid #fff;
+}
+
+/* cercles */
+
+.livraisonEX,.callDel{
+    box-shadow: 0px 2px 6px 3px #e7e7e7;
+    width: 100%;
+    color: #4d4d4d;
+    font-size: 12px !important;
+    background: #fff;
+    border-radius: 10px;
+    margin: 10px 0px;
+}
+.facilitePaiement{
+    height: 30px;
+    font-size: 19px;
+    font-family: 'Open Sans', sans-serif;
+    text-align: center;
+    line-height: 13px;
+}
+.Sansinter {
+    background-color: #049d27;
+    border-radius: 10px;
+    padding: 1px;
+    width: auto;
+
+}
+.box-tocart{
+    margin: 0px;
+}
+.product-social-links{
+    margin-top: 5px;
+}

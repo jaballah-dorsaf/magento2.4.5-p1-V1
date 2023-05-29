@@ -1,0 +1,46 @@
+<?php
+
+/**
+
+ * Copyright © Magento, Inc. All rights reserved.
+
+ * See COPYING.txt for license details.
+
+ */
+
+?>
+
+<?php /* @var $block \Magento\Catalog\Block\Product\View\AbstractView */?>
+
+<?php $_product = $block->getProduct() ?>
+<?php if ($block->displayProductStockStatus()) :?>
+    <?php $_stock_status = $_product->getAttributeText('erpstock'); ?>
+        <?php if ($_stock_status === "Sur commande 48h") :?>
+				<div itemprop="availability" href="https://schema.org/PreOrder" class="stock unavailable_preorder" title="<?php echo $_stock_status; ?>">
+	            	<span><?php echo $_stock_status; ?></span>
+	        	</div>
+			<?php elseif ($_stock_status === "En arrivage") :?>
+				<div itemprop="availability" href="https://schema.org/BackOrder" class="stock unavailable_backorder" title="<?php echo $_stock_status; ?>">
+	            	<span><?php echo $_stock_status; ?></span>
+	        	</div>
+                <?php elseif ($_stock_status === "En stock") :?>
+                <div itemprop="availability" href="https://schema.org/InStock" class="stock available" title="<?php echo $_stock_status; ?>">
+	            	<span><?php echo $_stock_status; ?></span>
+	        	</div>
+			
+	        <?php else :?>
+	        <div  itemprop="availability" href="http://schema.org/OutOfStock" class="stock unavailable" title="<?php echo $_stock_status; ?>">
+				<span><?php echo $_stock_status; ?></span>
+            </div>
+    <?php endif; ?> 
+
+<?php endif; ?>
+
+<?php 
+
+$brand=strtolower ($_product->getAttributeText('manufacturer'));
+    if ($brand != "" && $brand != "sans fabricant") {
+        echo '<a href="'.$block->getBaseUrl().str_replace(' ', '_',$brand).'"><img style="width:40%;height:30%;display:block;" src="https://media.mytek.tn/media/wysiwyg/marque/'.str_replace(' ', '_',$brand).'.jpg" alt="'.$brand.'"></a>' ;
+    }
+                  
+?>

@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+         <referenceContainer name="product.info.main">
+            <block 
+                class="Mytek\ErpSynchronize\Block\Catalog\Product\View\StockPerWarehouse"  
+                name="erpextra" 
+                as="erpsynch" 
+                template="Mytek_ErpSynchronize::product/view/custom.phtml">
+            </block>
+        </referenceContainer>
+        <referenceContainer name="sidebar.additional">
+            <block 
+                class="Mytek\ErpSynchronize\Block\Catalog\Product\View\StockPerWarehouse"  
+                name="customright" 
+                as="customright" 
+                template="Mytek_ErpSynchronize::product/view/customright.phtml">
+            </block>
+        </referenceContainer>
+
+
+         <move element="erpextra" destination="product.info.main" after="product.info.extrahint" />
+         <move element="customright" destination="sidebar.additional" after="-" />
+         
+    </body>
+</page>
+
+
+       

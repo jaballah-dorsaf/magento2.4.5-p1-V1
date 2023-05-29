@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <font src="fonts/opensans/light/opensans-300.woff2"/>
+        <font src="fonts/opensans/regular/opensans-400.woff2"/>
+        <font src="fonts/opensans/semibold/opensans-600.woff2"/>
+        <font src="fonts/opensans/bold/opensans-700.woff2"/>
+        <font src="fonts/Luma-Icons.woff2"/>
+        <css src="css/bootstrap/bootstrap.css"/>
+        <link src="js/pixel_fb.js"/>
+        <link src="js/tag_manager.js"/>
+    </head>
+    <body>
+        <referenceContainer name="after.body.start">
+        <block name="tag.manager.body" before="-" template="Magento_Theme::html/tag_manager.phtml" />
+        </referenceContainer>
+    </body>
+    
+</page>

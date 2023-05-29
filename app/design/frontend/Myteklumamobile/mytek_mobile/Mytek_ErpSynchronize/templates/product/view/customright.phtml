@@ -1,0 +1,79 @@
+<?php
+
+
+
+$ws_names = [ 
+            "M01" => 'Megastore Charguia 1 Tunis',
+            "M05" => 'Megastore Akouda Sousse',
+            "M06" => 'Magasin Bizerte',
+            "M03" => 'Magasin av. liberté Tunis',
+            "M04" => 'Magasin av. A Belhouane Nabeul',
+            "M02" => 'Magasin Trocadero Sousse',
+            "M07" => 'Megastore Sfax'
+            ];
+
+
+            // exemple du contenu de ws_array ci-dessous
+            // +------------------+--------+-----------------+---------------+-----------------+---------------------------------+--------+--------+---------+---------------------+------+--------+--------------+------------------+
+            // | CODE             | PRIX   | PRIX_SPECIFIQUE | CODE_BARRES   | FAMILLE         | DES                             | _6MOIS | _9MOIS | _12MOIS | UPDATED_DATE        | DEPO | QTESTK | MSG_ZERO_STK | REF_ARTICLE      |
+            // +------------------+--------+-----------------+---------------+-----------------+---------------------------------+--------+--------+---------+---------------------+------+--------+--------------+------------------+
+            // | SMARTEC-S18-NOIR | 49.000 | 10.000          | 1212548770490 | TELEPHONE MOBIL | SMARTECTELEPHONEPORTABLES18NOIR | 0.000  | 0.000  | 0.000   | 2022-03-09 04:19:52 | M01  | 0      | EPUISE       | SMARTEC-S18-NOIR |
+            // | SMARTEC-S18-NOIR | 49.000 | 10.000          | 1212548770490 | TELEPHONE MOBIL | SMARTECTELEPHONEPORTABLES18NOIR | 0.000  | 0.000  | 0.000   | 2022-03-09 04:19:52 | M02  | 0      | EPUISE       | SMARTEC-S18-NOIR |
+            // | SMARTEC-S18-NOIR | 49.000 | 10.000          | 1212548770490 | TELEPHONE MOBIL | SMARTECTELEPHONEPORTABLES18NOIR | 0.000  | 0.000  | 0.000   | 2022-03-09 04:19:52 | M03  | 0      | EPUISE       | SMARTEC-S18-NOIR |
+            // | SMARTEC-S18-NOIR | 49.000 | 10.000          | 1212548770490 | TELEPHONE MOBIL | SMARTECTELEPHONEPORTABLES18NOIR | 0.000  | 0.000  | 0.000   | 2022-03-09 04:19:52 | M04  | 0      | EPUISE       | SMARTEC-S18-NOIR |
+            // | SMARTEC-S18-NOIR | 49.000 | 10.000          | 1212548770490 | TELEPHONE MOBIL | SMARTECTELEPHONEPORTABLES18NOIR | 0.000  | 0.000  | 0.000   | 2022-03-09 04:19:52 | M40  | 0      | EPUISE       | SMARTEC-S18-NOIR |
+            // | SMARTEC-S18-NOIR | 49.000 | 10.000          | 1212548770490 | TELEPHONE MOBIL | SMARTECTELEPHONEPORTABLES18NOIR | 0.000  | 0.000  | 0.000   | 2022-03-09 04:19:52 | M50  | 0      | EPUISE       | SMARTEC-S18-NOIR |
+            // +------------------+--------+-----------------+---------------+-----------------+---------------------------------+--------+--------+---------+---------------------+------+--------+--------------+------------------+
+                 
+            
+
+
+
+
+$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+$product = $objectManager->get('Magento\Framework\Registry')->registry('current_product'); //get current product
+$_SKU = $product->getSku();
+
+
+echo "<br>";
+
+$_all_html ="<div id=\"block_synchronizestok\">";
+$_html ="";
+$_result = $block->getStockBySKU($_SKU);
+$_total_stock=0;
+$_MSG_ZERO_STK="";
+$stores_sort= "";
+if(isset($_result)){
+    $ws_array = $_result->fetchAll();
+    if (!empty($ws_array)) {
+
+        $_delivery_visible = false;
+        foreach ($ws_names as $key => $line) {
+            foreach ($ws_array as $row) {
+                if ($row['QTESTK'] > 0) $_delivery_visible = true;
+            }
+        }
+        if ($_delivery_visible) {
+            $_html .=   "</div> </div><div class='moveright sidebar sidebar-additional' style=' background:#F7F7F7 !important; box-shadow: none !important;padding: 0px; '>" .
+                            "<div class='livraisonEX'>".
+                                "<div style='width: auto;display:inline-block;vertical-align: top;'><img src='https://media.mytek.tn/media/wysiwyg/livraison/livraison-rouge-2.jpg' alt='livraison' width='100' width='100' style='width:36px;padding: 5px;' /></div>
+                                <div class='livExpress'> <a style='color: #4d4d4d;' href=\"https://www.mytek.tn/expedition-retours\">LIVRAISON EXPRESS: </a><span style='color: var(--success);font-weight:600;'> Oui</span></div>" .
+                            "</div>".
+                            "<div class='callDel'>".
+                            "<div style='width: auto;display:inline-block;vertical-align: top;'><img src='https://media.mytek.tn/media/wysiwyg/livraison/commande-en-ligne-rouge-1.jpg' alt='commande' width='100' width='100' style='width:36px;padding: 5px;' /></div>
+                                <div class='CommandLign'>  COMMANDEZ EN LIGNE OU APPELLEZ LE " .
+                                "<a style='color: var(--success);font-weight:600;' href=\"tel:36010010\">36 010 010 </a></div>" .
+                            "</div>".
+                        "</div> ";
+            
+        }
+}
+
+
+    $_all_html .= $_html;
+    $_all_html .= "</div>";
+    
+    echo $_all_html;
+
+}
+

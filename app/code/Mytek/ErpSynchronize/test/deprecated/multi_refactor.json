@@ -1,0 +1,49 @@
+{
+    "stock": 
+    {      
+      "CODE": "5510G15-I5-256SSD",
+      "PRIX": "2229.900",
+      "PRIX_SPECIFIQUE": "0",
+      "FAMILLE": "PRODUITS BEBES",
+      "CODE_BARRES": "8695199222832",
+      "DES": "SWEETBABYBATONNETSPOURBEBE60PIECES",
+      "_6MOIS": "0",
+      "_9MOIS": "0",
+      "_12MOIS": "0",
+      "warehouses":[
+        {
+          "DEPO": "M01",
+          "QTESTK": "2",
+          "MSG_ZERO_STK": "EN ARRIVAGE"
+        },
+        {
+          "DEPO": "M02",
+          "QTESTK": "0",
+          "MSG_ZERO_STK": "EN ARRIVAGE"
+        },
+        {
+          "DEPO": "M03",
+          "QTESTK": "0",
+          "MSG_ZERO_STK": "EN ARRIVAGE"
+        },
+        {
+          "DEPO": "M04",
+          "QTESTK": "0",
+          "MSG_ZERO_STK": "EN ARRIVAGE"
+        },
+        {
+          "DEPO": "M50",
+          "QTESTK": "0",
+          "MSG_ZERO_STK": "EN ARRIVAGE"
+        },
+        {
+          "DEPO": "M40",
+          "QTESTK": "1",
+          "MSG_ZERO_STK": "EN ARRIVAGE"
+        }
+    
+      ]
+  
+    }
+
+}
